@@ -15,12 +15,20 @@ Proyecto frontend construido con **React** y **Vite**, que implementa autenticac
 ## Estructura del proyecto
 
     src/
-    ├── api/
-    ├── services/
-    ├── hooks/
-    ├── pages/
-    ├── components/
-    └── config/
+    ├── features/
+        ├── auth
+            ├── components
+            ├── hooks
+            ├── pages
+            ├── services
+        ├── dashboard
+            ├── components
+            ├── pages
+            ├── services
+    ├── shared
+        ├── api
+        ├── components
+        ├── storage
 
 ## Login / Autenticación
 
