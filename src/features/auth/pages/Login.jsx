@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "./../services/factusAuth";
-
+import { toastSuccess, toastError } from "../../dashboard/components/toast";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -15,12 +15,13 @@ export default function Login() {
     try {
       setLoading(true);
       await login({ username: email, password });
-      alert("Login exitoso");
+      // sonner alert
+      toastSuccess("Bienvenido al sistema");
       // redirección al dashboard
       navigate("/dashboard");
     } catch (error) {
       console.error(error);
-      alert("Credenciales incorrectas");
+      toastError("Credenciales incorrectas");
     } finally {
       setLoading(false);
     }

@@ -3,10 +3,20 @@ import Login from "./features/auth/pages/Login";
 import Dashboard from "./features/dashboard/pages/Dashboard";
 import PrivateRoute from "./shared/components/PrivateRoute";
 import PublicRoute from "./shared/components/PublicRoute";
+import { Toaster } from "sonner";
 
 function App() {
   return (
     <BrowserRouter>
+      {/* Toaster global */}
+      <Toaster
+        position="top-right"
+        expand={true}
+        richColors
+        toastOptions={{
+          duration: 4000,
+        }}
+      />
       <Routes>
         {/* login bloqueado si ya hay sesión */}
         <Route
