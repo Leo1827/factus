@@ -12,6 +12,11 @@ let queue = [];
 // interceptor request
 
 api.interceptors.request.use(async (config) => {
+  // NO interceptar llamadas al OAuth
+  if (config.url?.includes("/oauth/token")) {
+    return config;
+  }
+
   let auth = getAuth();
 
   // si el token expiró > intentar refresh

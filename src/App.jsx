@@ -9,14 +9,7 @@ function App() {
   return (
     <BrowserRouter>
       {/* Toaster global */}
-      <Toaster
-        position="top-right"
-        expand={true}
-        richColors
-        toastOptions={{
-          duration: 4000,
-        }}
-      />
+      <Toaster position="top-right" richColors closeButton />
       <Routes>
         {/* login bloqueado si ya hay sesión */}
         <Route
