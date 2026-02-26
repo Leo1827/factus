@@ -44,10 +44,10 @@ export const refreshToken = async () => {
   }
 
   const params = new URLSearchParams();
-  params.appends("grant_type", "refresh_token");
-  params.appends("client_id", import.meta.env.VITE_FACTUS_CLIENT_ID);
-  params.appends("client_secret", import.meta.env.VITE_FACTUS_CLIENT_SECRET);
-  params.appends("refresh_token", auth.refresh_token);
+  params.append("grant_type", "refresh_token");
+  params.append("client_id", import.meta.env.VITE_FACTUS_CLIENT_ID);
+  params.append("client_secret", import.meta.env.VITE_FACTUS_CLIENT_SECRET);
+  params.append("refresh_token", auth.refresh_token);
 
   const response = await api.post(`${BASE}/oauth/token`, params, {
     headers: {

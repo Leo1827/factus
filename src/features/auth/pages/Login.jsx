@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { login } from "./../services/factusAuth";
+
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -13,6 +16,8 @@ export default function Login() {
       setLoading(true);
       await login({ username: email, password });
       alert("Login exitoso");
+      // redirección al dashboard
+      navigate("/dashboard");
     } catch (error) {
       console.error(error);
       alert("Credenciales incorrectas");
