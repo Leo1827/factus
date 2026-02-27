@@ -8,7 +8,7 @@ export default function Sidebar() {
   const [open, setOpen] = useState(false);
 
   const itemClass = (path) =>
-    `block px-4 py-2 rounded-xl text-sm font-medium transition-all ${
+    `block px-4 py-2 rounded-xl text-sm font-medium transition-all flex items-center gap-3 w-full ${
       pathname === path
         ? "bg-gray-900 text-white shadow-sm"
         : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
@@ -21,7 +21,7 @@ export default function Sidebar() {
 
   return (
     <>
-      {/* 🔹 Sidebar */}
+      {/* Sidebar */}
       <aside
         className={`
           fixed md:static z-50 top-0 left-0 h-full w-64 bg-white
@@ -39,7 +39,7 @@ export default function Sidebar() {
         <nav className="flex-1 p-4 space-y-3">
           <Link
             to="/dashboard"
-            className={`${itemClass("/dashboard")} flex items-center gap-3 w-full`}
+            className={`${itemClass("/dashboard")} `}
             onClick={() => setOpen(false)}
           >
             <LayoutDashboard size={18} />
@@ -48,17 +48,16 @@ export default function Sidebar() {
 
           <Link
             to="/dashboard"
-            className={`${itemClass("/dashboard")} flex items-center gap-3 w-full`}
+            className={`${itemClass("/dashboard")}`}
             onClick={() => setOpen(false)}
           >
             <Users size={18} />
             Usuarios
           </Link>
 
-          {/* 🔹 puedes agregar más items aquí */}
         </nav>
 
-        {/* 🔹 User section */}
+        {/* User section */}
         <div className="p-4 border-t">
           <div className="mb-3">
             <p className="text-sm font-medium text-gray-800">Usuario</p>
