@@ -11,6 +11,7 @@ Proyecto frontend construido con **React** y **Vite**, que implementa autenticac
 - **Vite** → Bundler y entorno de desarrollo  
 - **Tailwind** → Estilos, paletas de colores
 - **Sonner** → Sistema de alertas 
+- **Lucide react** → Iconos
 
 ---
 

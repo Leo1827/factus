@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { LayoutDashboard, LogOut, Users } from "lucide-react";
 import { clearAuth } from "../../../../shared/storage/tokenStorage";
 
 export default function Sidebar() {
@@ -35,13 +36,23 @@ export default function Sidebar() {
         </div>
 
         {/* Navigation */}
-        <nav className="flex-1 p-4 space-y-2">
+        <nav className="flex-1 p-4 space-y-3">
           <Link
             to="/dashboard"
-            className={itemClass("/dashboard")}
+            className={`${itemClass("/dashboard")} flex items-center gap-3 w-full`}
             onClick={() => setOpen(false)}
           >
-            📊 Dashboard
+            <LayoutDashboard size={18} />
+            Dashboard
+          </Link>
+
+          <Link
+            to="/dashboard"
+            className={`${itemClass("/dashboard")} flex items-center gap-3 w-full`}
+            onClick={() => setOpen(false)}
+          >
+            <Users size={18} />
+            Usuarios
           </Link>
 
           {/* 🔹 puedes agregar más items aquí */}
@@ -53,12 +64,13 @@ export default function Sidebar() {
             <p className="text-sm font-medium text-gray-800">Usuario</p>
             <p className="text-xs text-gray-500">admin@factus.com</p>
           </div>
-
+          
           <button
             onClick={handleLogout}
-            className="w-full px-4 py-2 text-sm font-medium text-red-600 rounded-xl hover:bg-red-50 transition"
+            className="w-full flex items-center gap-3 px-4 py-2 text-sm font-medium text-red-600 rounded-xl hover:bg-red-50 transition"
           >
-            Cerrar sesión
+            <LogOut size={18} />
+            <span>Cerrar sesión</span>
           </button>
         </div>
       </aside>
